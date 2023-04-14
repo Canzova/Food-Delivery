@@ -1,0 +1,288 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+
+/* ---> Creating Global Varibale */
+:root {
+    --navbar-height: 69px;
+}
+
+#navbar {
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+
+    /* Without the position: relative property on the #navbar container, any child element with a position: absolute or position: fixed property would be positioned relative to the document body instead of the navbar container. */
+
+    /* When the position: relative property is applied to an element, it creates a new positioning context for its child elements. Any child elements that have a position: absolute or position: fixed property will be positioned relative to their nearest positioned ancestor, which in this case is the #navbar container. */
+
+    position: relative;
+    height: 55px;
+}
+
+#navbar::before {
+    content: "";
+    background-color: rgb(0, 0, 0);
+
+    /* As we have set the position of this as absolute. Thus its position will be according to the position of its parent that is navbar */
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Navigation Bar : Logo and Image */
+#logo {
+    margin: 20px 29px;
+}
+
+#logo img {
+    height: 43px;
+    margin: 0px 10px;
+
+}
+
+/* Navigation Bar: List Styling */
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li {
+
+    /* To remove dot */
+    list-style: none;
+
+    /* Here size font size of font will be 3 times more than the size of html */
+
+    font-size: 1.3rem;
+
+    height: 25px;
+}
+
+#navbar ul li a {
+    color: white;
+    display: block;
+    padding: 0px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Home section */
+#home {
+    font-family: 'Bree Serif', serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    background-color: black;
+
+    background: url(../Images/BG3.jpg) no-repeat center center/cover;
+
+    /* As we have set the position of this as absolute. Thus its position will be according to the position of its parent that is navbar */
+
+    position: absolute;
+    height: 450px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1 {
+    text-align: center;
+}
+
+#home h1 p {
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Services section  */
+
+#services {
+    margin: 34px;
+    display: flex;
+}
+
+/* In the below code---> #services .box space between serives and .box is important  */
+
+#services .box {
+    border: 2px solid blue;
+    padding: 34px;
+    margin: -21px 6px;
+    border-radius: 23px;
+    background-color: #fbf2e5;
+}
+
+#services .box img {
+    height: 160px;
+
+    /* To use margin auto we have to make that element display box */
+
+    display: block;
+    margin: auto;
+}
+
+#services .box p {
+    font-family: 'Bree Serif', serif;
+}
+
+/* Clients section */
+#client-section {
+    /* height: 307px; */
+    position: relative;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: url(../Images/BG4.jpg)no-repeat center center/cover;
+    width: 100%;
+    height: 65%;
+    z-index: -1;
+    opacity: 0.9;
+    margin: 100px 0px;
+    top: 0px;
+    left: 0px;
+}
+
+.clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clients img {
+    height: 140px;
+} 
+
+.client-item {
+    padding: 34px;
+}
+
+/* Contct section */
+
+#contact{
+    position: relative;
+}
+
+#contactbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactbox form{
+    position: relative;
+    top: 20px;
+}
+
+#contactbox input{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    border: 2px solid black;
+    font-size: 1.1rem;
+}
+
+#contactbox textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    border: 2px solid black;
+    font-size: 1.1rem;
+}
+
+::placeholder{
+    color: black;
+}
+
+.btn:hover{
+    background: transparent;
+    border: 2px solid red;
+}
+#contactbox::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    top: 94px;
+    background: url(../Images/new2.jpg) no-repeat center center/cover;
+}
+
+#contactbox form{
+    width: 40%;
+}
+
+#contactbox label{
+    font-family: 'Bree Serif', serif;
+    font-size: 1.3rem;
+    color: #fbf2e5;
+
+}
+
+/* Footer */
+footer{
+    position: relative;
+    top: 94px;
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+.form-group input,
+.form-group textarea{
+    background: transparent;
+}
+
+/* Utility Class */
+
+.h-primary {
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+.h-secondary {
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    margin: 17px 17px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    /* To make our curser as pointer  */
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
