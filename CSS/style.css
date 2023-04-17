@@ -99,7 +99,7 @@
 
     background: url(../Images/Bg3.jpg) no-repeat center center/cover;
 
-    /* As we have set the position of this as absolute. Thus its position will be according to the position of its parent that is navbar */
+    /* As we have set the position of this as absolute. Thus its position will be according to the position of its nearest positioned ancistor that is navbar */
 
     position: absolute;
     height: 450px;
